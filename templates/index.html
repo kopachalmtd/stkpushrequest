@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayHero  Push</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>MAKE 2 PAYMENT</h1>
+        <p class="subtitle">Put your safaricom number and amount</p>
+        
+        <div class="form-container">
+            <form id="stkPushForm">
+                <div class="form-group">
+                    <label for="phone_number">Phone Number *</label>
+                    <input type="text" id="phone_number" name="phone_number" 
+                           placeholder="0712345678 or 254712345678" required>
+                    <small>Enter phone number in format: 0712345678 or 254712345678</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Amount (KES) *</label>
+                    <input type="number" id="amount" name="amount" 
+                           placeholder="100" min="1" required>
+                    <small>Minimum amount is KES 1</small>
+                </div>
+
+                <button type="submit" class="btn-primary">Pay Now</button>
+            </form>
+      <form id="stkPushForm">
+    <!-- form fields here -->
+</form>
+
+<!-- ✅ Add this here -->
+<div id="successMessage" style="display: none; color: green; font-weight: bold;">
+    ✅ Payment request sent successfully!
+
+        </div>
+<div id="responseContainer" style="display: none;">
+  <pre id="responseContent"></pre>
+</div>
+
+        </div>
+
+        <div id="loadingContainer" class="loading-container" style="display: none;">
+            <div class="spinner"></div>
+            <p>Sending payment request...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
