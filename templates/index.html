@@ -1,190 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Buy Safaricom Bundles Instantly</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-    body { font-family: "Inter", sans-serif; background: linear-gradient(180deg,#071018 0%, #042834 60%); color: #fff; }
-    .glass { background: rgba(255,255,255,0.03); backdrop-filter: blur(6px); }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy Safaricom Bundles</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="min-h-screen flex items-center justify-center p-6">
-  <div class="max-w-4xl w-full">
-    <!-- Hero -->
-    <section class="mb-8 p-8 rounded-2xl glass shadow-lg">
-      <div class="flex flex-col md:flex-row items-center gap-6">
-        <div class="flex-1">
-          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-            Buy Safaricom Bundles <span class="text-green-400">Instantly</span>
-          </h1>
-          <p class="mt-4 text-gray-200 max-w-xl">
-            Get your data bundles delivered instantly with secure PayHero payment. Fast, reliable, and affordable.
-          </p>
-
-          <div class="mt-6 flex gap-3">
-            <button id="getStartedBtn" class="bg-green-500 hover:bg-green-600 px-5 py-3 rounded-md font-semibold">Get Started</button>
-            <button id="howBtn" class="border border-white/30 px-5 py-3 rounded-md">How It Works</button>
-          </div>
-
-          <div class="mt-6 flex gap-6 text-sm text-gray-200">
-            <div class="flex items-center gap-2"><svg class="w-6 h-6 text-green-400" viewBox="0 0 24 24" fill="none"><path d="M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><div><div class="font-semibold">Instant Delivery</div><div class="text-xs text-gray-300">Bundles delivered instantly</div></div></div>
-            <div class="flex items-center gap-2"><svg class="w-6 h-6 text-green-400" viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6 6 .5-4.5 3 1.5 6L12 16.5 5 18 6.5 12 2 9.5 8 9 12 2z" stroke="currentColor" stroke-width="0"/></svg><div><div class="font-semibold">Secure Payment</div><div class="text-xs text-gray-300">PayHero protected</div></div></div>
-          </div>
-
-          <div class="mt-8 grid grid-cols-2 gap-4 text-center text-gray-200">
-            <div><div class="text-2xl font-bold">10,000+</div><div class="text-xs">Happy Customers</div></div>
-            <div><div class="text-2xl font-bold">≤ 30 sec</div><div class="text-xs">Delivery Time</div></div>
-            <div><div class="text-2xl font-bold">100%</div><div class="text-xs">Secure Payments</div></div>
-            <div><div class="text-2xl font-bold">4.9/5</div><div class="text-xs">Customer Rating</div></div>
-          </div>
-        </div>
-
-        <!-- Bundles preview & CTA -->
-        <aside class="w-full md:w-80 bg-gradient-to-b from-gray-800/60 to-gray-900/60 p-6 rounded-xl">
-          <h3 class="text-lg font-semibold mb-3">Choose Your Bundle</h3>
-          <p class="text-sm text-gray-300 mb-4">Select from our range of affordable data bundles</p>
-
-          <div class="space-y-3">
-            <div class="p-4 rounded-md bg-gray-800 flex justify-between items-center">
-              <div>
-                <div class="text-sm text-gray-300">1.5 GB Daily</div>
-                <div class="font-bold text-green-400">KSh 50</div>
-              </div>
-              <button class="bg-white/8 hover:bg-white/12 px-3 py-2 rounded" data-price="50" data-bundle="1.5GB">Select</button>
-            </div>
-
-            <div class="p-4 rounded-md bg-gray-800 flex justify-between items-center border-2 border-yellow-500">
-              <div>
-                <div class="text-sm text-gray-300">3 GB Daily</div>
-                <div class="font-bold text-green-400">KSh 100</div>
-                <div class="text-xs text-yellow-300">Most Popular</div>
-              </div>
-              <button class="bg-green-500 hover:bg-green-600 px-3 py-2 rounded text-white" data-price="100" data-bundle="3GB">Pay</button>
-            </div>
-
-            <div class="p-4 rounded-md bg-gray-800 flex justify-between items-center">
-              <div>
-                <div class="text-sm text-gray-300">3 GB Daily</div>
-                <div class="font-bold text-green-400">KSh 100</div>
-              </div>
-              <button class="bg-white/8 hover:bg-white/12 px-3 py-2 rounded" data-price="100" data-bundle="3GB-2">Select</button>
-            </div>
-          </div>
-
-          <div class="mt-6 text-center">
-            <button id="payNowBtn" class="w-full bg-green-500 hover:bg-green-600 py-3 rounded font-semibold">Pay Now</button>
-          </div>
-        </aside>
+<body>
+  <!-- 🔰 Promo Section -->
+  <div class="promo-section">
+    <h2>Buy Safaricom Bundles Instantly</h2>
+    <p>Get your data bundles delivered instantly with secure PayHero payment.<br>Fast, reliable, and affordable.</p>
+    <div class="promo-buttons">
+      <button class="promo-btn" onclick="scrollToBundles()">Get Started</button>
+      <button class="promo-btn secondary">How It Works</button>
+    </div>
+    <div class="promo-icons">
+      <div class="icon-block">
+        <span>⚡</span>
+        <p>Instant Delivery: Within seconds</p>
       </div>
-    </section>
-  </div>
-
-  <!-- Phone modal -->
-  <div id="phoneModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
-    <div class="bg-gray-900 rounded-lg p-6 w-full max-w-md">
-      <h3 class="text-xl font-semibold mb-2">Enter your M-Pesa phone number</h3>
-      <p class="text-xs text-gray-400 mb-4">We will send an STK push to this number to complete payment.</p>
-      <form id="phoneForm" class="space-y-3">
-        <input id="phoneInput" type="tel" placeholder="e.g., 0712345678" required pattern="[0-9]{9,15}"
-               class="w-full px-3 py-2 rounded bg-gray-800 border border-gray-700 focus:outline-none" />
-        <div class="flex gap-2">
-          <button type="submit" id="confirmPayBtn" class="flex-1 bg-green-500 hover:bg-green-600 py-2 rounded font-semibold">Confirm & Pay</button>
-          <button type="button" id="cancelModal" class="flex-1 bg-gray-700 hover:bg-gray-600 py-2 rounded">Cancel</button>
-        </div>
-        <p id="modalStatus" class="text-sm text-gray-300 mt-2"></p>
-      </form>
+      <div class="icon-block">
+        <span>🔒</span>
+        <p>Secure Payment: Very protected</p>
+      </div>
     </div>
   </div>
 
-  <script>
-    // Configure backend endpoint (same origin by default)
-    window.__backend_url = window.__backend_url || '/payhero/checkout';
+  <div class="container" id="bundleSection">
+    <h1>Select a Bundle</h1>
+    <div id="bundleOptions" class="bundle-grid">
+      <button class="bundle-btn" data-amount="50" data-ref="1.5GB_daily">Ksh 50 = 1.5GB (Daily)</button>
+      <button class="bundle-btn" data-amount="100" data-ref="3GB_daily">Ksh 100 = 3GB (Daily)</button>
+      <button class="bundle-btn" data-amount="500" data-ref="8GB_weekly">Ksh 500 = 8GB (Weekly)</button>
+      <button class="bundle-btn" data-amount="999" data-ref="15GB_weekly">Ksh 999 = 15GB (Weekly)</button>
+      <button class="bundle-btn" data-amount="1999" data-ref="30GB_monthly">Ksh 1999 = 30GB (Monthly)</button>
+    </div>
 
-    // Selected payment context
-    let selected = { price: 100, bundle: '3GB' };
+    <form id="paymentForm" style="display:none;">
+      <input type="text" id="phone_number" placeholder="Phone Number (e.g. 0712345678)" required />
+      <input type="text" id="customer_name" placeholder="Your Name" />
+      <button type="submit" id="buyBtn">Complete Payment</button>
+    </form>
 
-    // hook bundle buttons
-    document.querySelectorAll('[data-price]').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        selected.price = btn.getAttribute('data-price');
-        selected.bundle = btn.getAttribute('data-bundle');
-        // If this is a Pay button, open modal
-        if (btn.textContent.trim().toLowerCase() === 'pay') {
-          openPhoneModal();
-        }
-      });
-    });
+    <div id="statusMessage"></div>
+  </div>
 
-    document.getElementById('payNowBtn').addEventListener('click', openPhoneModal);
-    document.getElementById('getStartedBtn').addEventListener('click', openPhoneModal);
-    document.getElementById('cancelModal').addEventListener('click', closePhoneModal);
-
-    function openPhoneModal() {
-      document.getElementById('modalStatus').textContent = '';
-      document.getElementById('phoneInput').value = '';
-      document.getElementById('phoneModal').classList.remove('hidden');
-      document.getElementById('phoneInput').focus();
-    }
-    function closePhoneModal() {
-      document.getElementById('phoneModal').classList.add('hidden');
-    }
-
-    // Handle phone form submit -> call backend to start STK push
-    document.getElementById('phoneForm').addEventListener('submit', async (ev) => {
-      ev.preventDefault();
-      const phone = document.getElementById('phoneInput').value.trim();
-      if (!phone || phone.length < 9) {
-        document.getElementById('modalStatus').textContent = 'Enter a valid phone number.';
-        return;
-      }
-
-      // UI state
-      const confirmBtn = document.getElementById('confirmPayBtn');
-      confirmBtn.disabled = true;
-      confirmBtn.textContent = 'Sending STK...';
-
-      document.getElementById('modalStatus').textContent = 'Initiating payment...';
-
-      try {
-        const body = {
-          phone,
-          amount: selected.price,
-          bundle: selected.bundle,
-          // user_id optional: include if you manage users
-        };
-
-        const res = await fetch(window.__backend_url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body)
-        });
-
-        const data = await res.json().catch(() => ({}));
-
-        if (!res.ok) {
-          document.getElementById('modalStatus').textContent = data.error || 'Failed to initiate payment.';
-          confirmBtn.disabled = false;
-          confirmBtn.textContent = 'Confirm & Pay';
-          return;
-        }
-
-        // Successful kick-off
-        const ref = data.account_reference || data.accountReference || 'unknown';
-        document.getElementById('modalStatus').textContent = `STK push sent. Check ${phone} and approve the prompt. Ref: ${ref}`;
-        // Optionally close modal after a short delay
-        setTimeout(() => { closePhoneModal(); }, 4500);
-
-      } catch (err) {
-        console.error(err);
-        document.getElementById('modalStatus').textContent = 'Network error initiating payment.';
-      } finally {
-        confirmBtn.disabled = false;
-        confirmBtn.textContent = 'Confirm & Pay';
-      }
-    });
-  </script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
